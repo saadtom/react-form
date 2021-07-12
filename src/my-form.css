@@ -10,3 +10,7 @@
 .submitting {
     color: green;
 }
+
+.error {
+    color: red;
+}
