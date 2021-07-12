@@ -1,0 +1,12 @@
+.submit-button {
+    width: 100px; 
+    text-transform: uppercase;
+}
+
+.form-label {
+    font-size: 14px;
+}
+
+.submitting {
+    color: green;
+}
