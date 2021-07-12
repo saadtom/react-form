@@ -9,7 +9,7 @@ const MyForm = () => {
     const [address, setAddress] = useState('');
     const [email, setEmail] = useState('');
     const [jobTitle, setJobTitle] = useState('');
-    const [salary, setSalary] = useState('');
+    const [salary, setSalary] = useState(''); // some comment 
     const formInfo = [
         { label: 'First Name', name: 'firstName' },
         { label: 'Last Name', name: 'lastName' },
