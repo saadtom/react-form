@@ -98,7 +98,7 @@ const MyForm = () => {
                             label="Salary"
                             name="salary"
                             type="text"
-                            placeholder="Salary"
+                            placeholder="Salary per year"
                         />
 
                         <MySelect label="Job Type" name="jobType">
