@@ -1,4 +1,4 @@
-import { Formik, Form, useField } from 'formik'; 
+import { useField } from 'formik'; 
 
 const MyTextInput = ({ label, ...props }) => {
     const [field, meta] = useField(props);
@@ -9,7 +9,7 @@ const MyTextInput = ({ label, ...props }) => {
                     <label htmlFor={props.id || props.name}>{label}</label>
                 </div>
                 <div className='col-6'>
-                    <input className="text-input" className="form-control" {...field} {...props} />
+                    <input className="text-input form-control" {...field} {...props} />
                     {meta.touched && meta.error ? (
                         <div className="error">{meta.error}</div>
                     ) : null}

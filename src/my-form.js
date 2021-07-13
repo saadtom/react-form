@@ -1,5 +1,5 @@
 import './my-form.css';
-import { Formik, Form, useField } from 'formik';
+import { Formik, Form } from 'formik';
 import MyTextInput from './my-text-input';
 import MyCheckbox from './my-checkbox';
 import MySelect from './my-select';
@@ -60,10 +60,23 @@ const MyForm = () => {
                         />
 
                         <MyTextInput
+                            label="Address"
+                            name="address"
+                            type="text"
+                            placeholder="U.S Address"
+                        />
+
+                        <MyTextInput
                             label="Email Address"
                             name="email"
                             type="email"
                             placeholder="jane@formik.com"
+                        />
+                        <MyTextInput
+                            label="Salary"
+                            name="salary"
+                            type="number"
+                            placeholder="Salary"
                         />
 
                         <MySelect label="Job Type" name="jobType">
