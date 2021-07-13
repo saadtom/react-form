@@ -12,9 +12,11 @@ const MyForm = () => {
                 initialValues={{
                     firstName: '',
                     lastName: '',
+                    address: '',
                     email: '',
                     acceptedTerms: false, // added for our checkbox
                     jobType: '', // added for our select
+                    salary: ''
                 }}
                 validationSchema={Yup.object({
                     firstName: Yup.string()
@@ -26,6 +28,7 @@ const MyForm = () => {
                     email: Yup.string()
                         .email('Invalid email address')
                         .required('Required'),
+                    address: Yup.string().required('Required'),
                     acceptedTerms: Yup.boolean()
                         .required('Required')
                         .oneOf([true], 'You must accept the terms and conditions.'),
@@ -35,6 +38,13 @@ const MyForm = () => {
                             'Invalid Job Type'
                         )
                         .required('Required'),
+                    salary: Yup.number('Invalid number')
+                        .required('ERROR: The number is required!')
+                        .test(
+                            'Is positive?',
+                            'ERROR: The number must be greater than 0!',
+                            (value) => value > 0
+                        )
                 })}
                 onSubmit={(values, { setSubmitting }) => {
                     setTimeout(() => {
@@ -75,7 +85,7 @@ const MyForm = () => {
                         <MyTextInput
                             label="Salary"
                             name="salary"
-                            type="number"
+                            type="text"
                             placeholder="Salary"
                         />
 
