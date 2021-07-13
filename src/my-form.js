@@ -1,8 +1,8 @@
 import './my-form.css';
 import { Formik, Form } from 'formik';
-import MyTextInput from './my-text-input';
-import MyCheckbox from './my-checkbox';
-import MySelect from './my-select';
+import MyTextInput from './form-elements/my-text-input';
+import MyCheckbox from './form-elements/my-checkbox';
+import MySelect from './form-elements/my-select';
 import * as Yup from 'yup';
 
 const MyForm = () => {
@@ -13,6 +13,7 @@ const MyForm = () => {
                     firstName: '',
                     lastName: '',
                     address: '',
+                    ssn: '',
                     email: '',
                     acceptedTerms: false, // added for our checkbox
                     jobType: '', // added for our select
@@ -29,6 +30,10 @@ const MyForm = () => {
                         .email('Invalid email address')
                         .required('Required'),
                     address: Yup.string().required('Required'),
+                    ssn: Yup.string()
+                        .min(9, 'Must be 9 digits')
+                        .max(9, 'Must be 9 digits')
+                        .required('Required'),
                     acceptedTerms: Yup.boolean()
                         .required('Required')
                         .oneOf([true], 'You must accept the terms and conditions.'),
@@ -74,6 +79,13 @@ const MyForm = () => {
                             name="address"
                             type="text"
                             placeholder="U.S Address"
+                        />
+
+                        <MyTextInput
+                            label="SSN number"
+                            name="ssn"
+                            type="text"
+                            placeholder="Your SSN Number"
                         />
 
                         <MyTextInput
